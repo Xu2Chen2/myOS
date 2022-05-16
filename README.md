@@ -68,6 +68,7 @@ sudo pacman -S --noconfirm flameshot
 sudo pacman -S --noconfirm rnote
 sudo pacman -S --noconfirm atom
 sudo pacman -S --noconfirm apm
+sudo pacman -S --noconfirm baidupcs-go
 sudo pacman -S --noconfirm wireguard-tools
 sudo pacman -S --noconfirm paraview
 sudo pacman -S --noconfirm chromium && xdg-settings set default-web-browser chromium.desktop
