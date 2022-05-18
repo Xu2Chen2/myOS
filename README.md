@@ -154,7 +154,6 @@ exportproxy && for iAPK in {\
 "org.videolan.vlc",\
 "com.jacksoftw.webcam",\
 "com.tencent.mm",\
-"ctrip.english",\
 "com.bilibili.app.in",\
 "com.xiaomi.smarthome",\
 "com.whatsapp",\
