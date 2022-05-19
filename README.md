@@ -114,9 +114,6 @@ sudo systemctl start docker
 curl -s https://api.github.com/repos/docker/compose/releases/latest | grep browser_download_url  | grep docker-compose-linux-x86_64 | cut -d '"' -f 4 | wget -qi -
 chmod +x docker-compose-linux-x86_64
 sudo mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
-# echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com"] \n}' | sudo tee /etc/docker/daemon.json
-# curl -s https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "uBlock*" | cut -d : -f 2,3 | tr -d \" | wget -qi - ; rm -rf $HOME/Downloads/*,
-# git clone https://github.com/chunibyocola/sc-translator-crx.git $HOME/Downloads/sc-translator-crx
 
 source /etc/profile
 source /etc/environment
@@ -124,6 +121,9 @@ source $HOME/.bash_profile
 source $HOME/.bashrc
 source $HOME/.zshrc
 yes | sudo pacman -Scc
+# echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com"] \n}' | sudo tee /etc/docker/daemon.json
+# curl -s https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "uBlock*" | cut -d : -f 2,3 | tr -d \" | wget -qi - ; rm -rf $HOME/Downloads/*,
+# git clone https://github.com/chunibyocola/sc-translator-crx.git $HOME/Downloads/sc-translator-crx
 
 wget -O - https://www.anaconda.com/distribution/ 2>/dev/null | sed -ne 's@.*\(https:\/\/repo\.anaconda\.com\/archive\/Anaconda3-.*-Linux-x86_64\.sh\)\">64-Bit (x86) Installer.*@\1@p' | xargs wget
 bash ./Anaconda3-*-Linux-x86_64.sh -b -p $HOME/anaconda3
