@@ -27,6 +27,7 @@ user_pref(\"network.proxy.socks_port\", 7890);\n\
 user_pref(\"network.proxy.socks_remote_dns\", true);\n\
 user_pref(\"network.trr.mode\", 3);\n\
 user_pref(\"network.trr.uri\", \"https://mozilla.cloudflare-dns.com/dns-query\");\n\
+user_pref(\"network.trr.custom_uri\", \"https://a.passcloud.xyz/dns-query\");\n\
 user_pref(\"network.dns.echconfig.enabled\", true);\n\
 user_pref(\"network.dns.http3_echconfig.enabled\", true);\n\
 user_pref(\"network.dns.use_https_rr_as_altsvc\", true);\n\
