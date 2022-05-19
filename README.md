@@ -114,6 +114,7 @@ curl -s https://api.github.com/repos/docker/compose/releases/latest | grep brows
 chmod +x docker-compose-linux-x86_64
 sudo mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 # echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com"] \n}' | sudo tee /etc/docker/daemon.json
+# curl -s https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "uBlock*" | cut -d : -f 2,3 | tr -d \" | wget -qi - ; rm -rf $HOME/Downloads/*,
 
 source /etc/profile
 source /etc/environment
