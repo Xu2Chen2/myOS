@@ -115,6 +115,10 @@ curl -s https://api.github.com/repos/docker/compose/releases/latest | grep brows
 chmod +x docker-compose-linux-x86_64
 sudo mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 
+sudo sed -i 's/#EnableAUR/EnableAUR/g' /etc/pamac.conf
+sudo pamac install --no-confirm wps-office ttf-wps-fonts wps-office-mui-zh-cn wps-office-fonts ttf-ms-fonts
+sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
+
 source /etc/profile
 source /etc/environment
 source $HOME/.bash_profile
