@@ -161,7 +161,6 @@ exportproxy && for iAPK in {\
 "com.bilibili.app.in",\
 "com.xiaomi.smarthome",\
 "com.whatsapp",\
-"com.spotify.music",\
 "com.microsoft.teams",\
 "com.tranzmate"\
 "it.kyntos.webus"\
