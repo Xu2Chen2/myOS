@@ -169,12 +169,12 @@ exportproxy && for iAPK in {\
 "it.kyntos.webus"\
 }; do docker run --rm -v $HOME/Downloads:/output ghcr.io/efforg/apkeep:stable -a $iAPK /output && adb install "$iAPK.apk"; done
 
-sudo su;\
-apt update -y;\
-apt install iptables-persistent wget curl -y;\
-iptables -I INPUT -s 0.0.0.0/0 -p tcp --match multiport --dports 22,80,443 -j ACCEPT;\
-iptables-save;\
-netfilter-persistent save;\
-netfilter-persistent reload;\
+sudo su
+apt update -y
+apt install iptables-persistent wget curl -y
+iptables -I INPUT -s 0.0.0.0/0 -p tcp --match multiport --dports 22,80,443 -j ACCEPT
+iptables-save
+netfilter-persistent save
+netfilter-persistent reload
 iptables -L -n --line-numbers
 EOF
