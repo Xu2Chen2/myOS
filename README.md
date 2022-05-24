@@ -57,7 +57,6 @@ sudo pacman -S --noconfirm wget
 sudo pacman -S --noconfirm zip
 sudo pacman -S --noconfirm unzip
 sudo pacman -S --noconfirm vlc
-sudo pacman -S --noconfirm libreoffice
 sudo pacman -S --noconfirm octave
 sudo pacman -S --noconfirm freerdp
 sudo pacman -S --noconfirm remmina
