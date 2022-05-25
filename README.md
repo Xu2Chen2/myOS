@@ -155,6 +155,7 @@ echo "alias of2112=\"source ~/openfoam/OpenFOAM-v2112/etc/bashrc\"" | tee -a $HO
 << EOF
 exportproxy && for iAPK in {\
 "org.mozilla.fenix",\
+"com.apkpure.installer",\
 "com.google.android.inputmethod.latin",\
 "com.google.android.apps.translate",\
 "com.adobe.reader",\
