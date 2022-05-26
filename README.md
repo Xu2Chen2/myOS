@@ -88,9 +88,35 @@ ipv6: true\n\
 external-controller: 127.0.0.1:9090\n\
 secret: '0000'\n\
 rules:\n\
-  - DOMAIN-SUFFIX,cn,DIRECT\n\
-  - GEOIP,CN,DIRECT\n\
-  - MATCH,tDE\n\
+  - GEOIP,CN,DIRECT
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - DOMAIN-SUFFIX,netflix.com,tSG\n\
+  - DOMAIN-SUFFIX,netflix.net,tSG\n\
+  - DOMAIN-SUFFIX,nflxext.com,tSG\n\
+  - DOMAIN-SUFFIX,nflximg.com,tSG\n\
+  - DOMAIN-SUFFIX,nflximg.net,tSG\n\
+  - DOMAIN-SUFFIX,nflxso.net,tSG\n\
+  - DOMAIN-SUFFIX,nflxvideo.net,tSG\n\
+  - DOMAIN-SUFFIX,netflixdnstest0.com,tSG\n\
+  - DOMAIN-SUFFIX,netflixdnstest1.com,tSG\n\
+  - DOMAIN-SUFFIX,netflixdnstest2.com,tSG\n\
+  - DOMAIN-SUFFIX,netflixdnstest3.com,tSG\n\
+  - DOMAIN-SUFFIX,netflixdnstest4.com,tSG\n\
+  - DOMAIN-SUFFIX,netflixdnstest5.com,tSG\n\
+  - DOMAIN-SUFFIX,netflixdnstest6.com,tSG\n\
+  - DOMAIN-SUFFIX,netflixdnstest7.com,tSG\n\
+  - DOMAIN-SUFFIX,netflixdnstest8.com,tSG\n\
+  - DOMAIN-SUFFIX,netflixdnstest9.com,tSG\n\
+  - IP-CIDR,23.246.0.0/18,tSG,no-resolve\n\
+  - IP-CIDR,37.77.184.0/21,tSG,no-resolve\n\
+  - IP-CIDR,45.57.0.0/17,tSG,no-resolve\n\
+  - IP-CIDR,64.120.128.0/17,tSG,no-resolve\n\
+  - IP-CIDR,66.197.128.0/17,tSG,no-resolve\n\
+  - IP-CIDR,108.175.32.0/20,tSG,no-resolve\n\
+  - IP-CIDR,192.173.64.0/18,tSG,no-resolve\n\
+  - IP-CIDR,198.38.96.0/19,tSG,no-resolve\n\
+  - IP-CIDR,198.45.48.0/20,tSG,no-resolve\n\
+  - MATCH,tDE
 proxies:\n\
   - {name: \"tDE\", type: trojan, port: 443, server: c.c, password: 0}\n\
   - {name: \"tSG\", type: trojan, port: 443, server: c.c, password: 0}\n\
