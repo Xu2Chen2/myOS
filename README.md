@@ -19,7 +19,7 @@ sudo sed -i 's|Exec=|Exec=export MOZ_DISABLE_RDD_SANDBOX=1 \&\& |g' /usr/share/a
 ffUserRelease=$(find /home/$USER/.mozilla/firefox/ -type d -name '*default-release')
 echo -e "\
 //user.js
-user_pref(\"network.proxy.type\", 1);\n\
+user_pref(\"network.proxy.type\", 5);\n\
 user_pref(\"network.proxy.http\", \"127.0.0.1\");\n\
 user_pref(\"network.proxy.http_port\", 7890);\n\
 user_pref(\"network.proxy.ssl\", \"127.0.0.1\");\n\
