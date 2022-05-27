@@ -189,6 +189,7 @@ exportproxy && for iAPK in {\
 "com.adobe.reader",\
 "org.videolan.vlc",\
 "com.jacksoftw.webcam",\
+"com.eg.android.AlipayGphone",\
 "com.tencent.mm",\
 "com.xiaomi.smarthome",\
 "com.whatsapp",\
