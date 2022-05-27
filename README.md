@@ -15,6 +15,7 @@ sudo pacman -Fy --noconfirm
 sudo pacman -S --noconfirm archlinux-keyring
 
 timeout 9 firefox
+sudo sed -i 's|Exec=|Exec=export MOZ_DISABLE_RDD_SANDBOX=1 \&\& |g' /usr/share/applications/firefox.desktop
 ffUserRelease=$(find /home/$USER/.mozilla/firefox/ -type d -name '*default-release')
 echo -e "\
 //user.js
