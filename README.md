@@ -79,7 +79,7 @@ sudo pacman -S --noconfirm yt-dlp
 sudo pacman -S --noconfirm chromium && xdg-settings set default-web-browser chromium.desktop
 sudo pacman -S --noconfirm syncthing && sudo systemctl enable --now syncthing@$USER
 sudo pacman -S --noconfirm clash && clash -t
-echo "alias exportproxy=\"clash > /dev/null 2>&1 & ; export http_proxy=http://127.0.0.1:7890/ ; export https_proxy=https://127.0.0.1:7890/ ; export ftp_proxy=http://127.0.0.1:7890/\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+echo "alias exportproxy=\"export http_proxy=http://127.0.0.1:7890/ ; export https_proxy=https://127.0.0.1:7890/ ; export ftp_proxy=http://127.0.0.1:7890/\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 echo -e "\
 mixed-port: 7890\n\
 allow-lan: false\n\
