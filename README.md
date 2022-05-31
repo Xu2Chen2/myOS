@@ -183,12 +183,11 @@ exportproxy && for iAPK in {\
 "org.mozilla.fenix",\
 "org.mozilla.firefox_beta",\
 "com.apkpure.installer",\
-"com.google.android.inputmethod.latin",\
-"com.google.android.apps.translate",\
-"com.adobe.reader",\
 "org.videolan.vlc",\
 "com.jacksoftw.webcam",\
-"com.eg.android.AlipayGphone",\
+"com.adobe.reader",\
+"com.google.android.apps.translate",\
+"com.google.android.inputmethod.latin",\
 "com.tencent.mm",\
 "com.xiaomi.smarthome",\
 "com.whatsapp",\
