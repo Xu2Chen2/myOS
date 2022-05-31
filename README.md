@@ -189,7 +189,6 @@ exportproxy && for iAPK in {\
 "com.google.android.apps.translate",\
 "com.google.android.inputmethod.latin",\
 "com.tencent.mm",\
-"com.xiaomi.smarthome",\
 "com.whatsapp",\
 "com.microsoft.teams",\
 "com.tranzmate"\
