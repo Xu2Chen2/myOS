@@ -187,6 +187,7 @@ exportproxy && for iAPK in {\
 "org.videolan.vlc",\
 "com.jacksoftw.webcam",\
 "com.adobe.reader",\
+"com.lonelycatgames.Xplore",\
 "com.google.android.apps.translate",\
 "com.google.android.inputmethod.latin",\
 "com.tencent.mm",\
