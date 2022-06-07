@@ -165,7 +165,7 @@ Terminal=false\n\
 StartupNotify=true\n\
 Categories=Science\n\
 " | sudo tee /usr/share/applications/spyder.desktop
-pip install SciencePlots
+pip install pystun3 SciencePlots
 
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/OpenFOAM-v2112.tgz
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/ThirdParty-v2112.tgz
