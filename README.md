@@ -88,6 +88,8 @@ ipv6: true\n\
 external-controller: 127.0.0.1:9090\n\
 secret: '0000'\n\
 rules:\n\
+  - GEOIP,CN,DIRECT\n\
+  - DOMAIN-SUFFIX,cn,DIRECT\n\
   - DOMAIN-SUFFIX,nature.com,DIRECT\n\
   - DOMAIN-SUFFIX,springer.com,DIRECT\n\
   - DOMAIN-SUFFIX,springernature.com,DIRECT\n\
@@ -115,8 +117,6 @@ rules:\n\
   - DOMAIN-SUFFIX,liebertpub.com,DIRECT\n\
   - DOMAIN-SUFFIX,science.org,DIRECT\n\
   - DOMAIN-SUFFIX,worldscientific.com,DIRECT\n\
-  - GEOIP,CN,DIRECT\n\
-  - DOMAIN-SUFFIX,cn,DIRECT\n\
   - DOMAIN-SUFFIX,netflix.com,tSG\n\
   - DOMAIN-SUFFIX,netflix.net,tSG\n\
   - DOMAIN-SUFFIX,nflxext.com,tSG\n\
