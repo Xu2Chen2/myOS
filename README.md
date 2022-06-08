@@ -88,6 +88,33 @@ ipv6: true\n\
 external-controller: 127.0.0.1:9090\n\
 secret: '0000'\n\
 rules:\n\
+  - DOMAIN-SUFFIX,nature.com,DIRECT\n\
+  - DOMAIN-SUFFIX,springer.com,DIRECT\n\
+  - DOMAIN-SUFFIX,springernature.com,DIRECT\n\
+  - DOMAIN-SUFFIX,cdnsciencepub.com,DIRECT\n\
+  - DOMAIN-SUFFIX,academic.oup.com,DIRECT\n\
+  - DOMAIN-SUFFIX,sciencedirect.com,DIRECT\n\
+  - DOMAIN-SUFFIX,plos.org,DIRECT\n\
+  - DOMAIN-SUFFIX,frontiersin.org,DIRECT\n\
+  - DOMAIN-SUFFIX,mdpi.com,DIRECT\n\
+  - DOMAIN-SUFFIX,biomedcentral.com,DIRECT\n\
+  - DOMAIN-SUFFIX,elsevier.com,DIRECT\n\
+  - DOMAIN-SUFFIX,cshlp.org,DIRECT\n\
+  - DOMAIN-SUFFIX,wiley.com,DIRECT\n\
+  - DOMAIN-SUFFIX,acs.org,DIRECT\n\
+  - DOMAIN-SUFFIX,cnki.net,DIRECT\n\
+  - DOMAIN-SUFFIX,tandfonline.com,DIRECT\n\
+  - DOMAIN-SUFFIX,csiro.au,DIRECT\n\
+  - DOMAIN-SUFFIX,clarivate.com,DIRECT\n\
+  - DOMAIN-SUFFIX,annualreviews.org,DIRECT\n\
+  - DOMAIN-SUFFIX,jstor.org,DIRECT\n\
+  - DOMAIN-SUFFIX,rsc.org,DIRECT\n\
+  - DOMAIN-SUFFIX,clarivate.com,DIRECT\n\
+  - DOMAIN-SUFFIX,webofscience.com,DIRECT\n\
+  - DOMAIN-SUFFIX,webofknowledge.com,DIRECT\n\
+  - DOMAIN-SUFFIX,liebertpub.com,DIRECT\n\
+  - DOMAIN-SUFFIX,science.org,DIRECT\n\
+  - DOMAIN-SUFFIX,worldscientific.com,DIRECT\n\
   - GEOIP,CN,DIRECT\n\
   - DOMAIN-SUFFIX,cn,DIRECT\n\
   - DOMAIN-SUFFIX,netflix.com,tSG\n\
