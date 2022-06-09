@@ -60,6 +60,7 @@ sudo pacman -S --noconfirm vlc
 sudo pacman -S --noconfirm octave
 sudo pacman -S --noconfirm freerdp
 sudo pacman -S --noconfirm remmina
+sudo pacman -S --noconfirm libreoffice
 sudo pacman -S --noconfirm kdenlive
 sudo pacman -S --noconfirm gimp
 sudo pacman -S --noconfirm inkscape
