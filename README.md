@@ -104,6 +104,7 @@ rules:\n\
   - DOMAIN-SUFFIX,mdpi.com,DIRECT\n\
   - DOMAIN-SUFFIX,biomedcentral.com,DIRECT\n\
   - DOMAIN-SUFFIX,elsevier.com,DIRECT\n\
+  - DOMAIN-SUFFIX,ascelibrary.org,DIRECT\n\
   - DOMAIN-SUFFIX,cshlp.org,DIRECT\n\
   - DOMAIN-SUFFIX,wiley.com,DIRECT\n\
   - DOMAIN-SUFFIX,acs.org,DIRECT\n\
