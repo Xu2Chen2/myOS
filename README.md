@@ -99,6 +99,8 @@ rules:\n\
   - DOMAIN-SUFFIX,sciencedirect.com,DIRECT\n\
   - DOMAIN-SUFFIX,plos.org,DIRECT\n\
   - DOMAIN-SUFFIX,frontiersin.org,DIRECT\n\
+  - DOMAIN-SUFFIX,arxiv.org,DIRECT\n\
+  - DOMAIN-SUFFIX,ieee.org,DIRECT\n\
   - DOMAIN-SUFFIX,mdpi.com,DIRECT\n\
   - DOMAIN-SUFFIX,biomedcentral.com,DIRECT\n\
   - DOMAIN-SUFFIX,elsevier.com,DIRECT\n\
