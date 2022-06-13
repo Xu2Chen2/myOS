@@ -223,6 +223,7 @@ exportproxy && for iAPK in {\
 "com.lonelycatgames.Xplore",\
 "com.google.android.apps.translate",\
 "com.google.android.inputmethod.latin",\
+"org.kde.kdeconnect_tp",\
 "com.tencent.mm",\
 "com.whatsapp",\
 "com.microsoft.teams",\
