@@ -6,14 +6,16 @@ sed -i '30,33d' $HOME/.config/powermanagementprofilesrc
 sed -i '18,25d' $HOME/.config/powermanagementprofilesrc
 sed -i '3,9d' $HOME/.config/powermanagementprofilesrc
 echo -e "[Daemon]\nAutolock=false\nLockOnResume=false" | tee $HOME/.config/kscreenlockerrc
-echo "alias mountsdb=\"mkdir $HOME/sdb; sudo mount /dev/sdb1 $HOME/sdb; sudo chmod -R 777 $HOME/sdb\"" | tee -a $HOME/.bashrc $HOME/.zshrc
-echo "alias umountsdb=\"sudo umount -v /dev/sdb1\"" | tee -a $HOME/.bashrc $HOME/.zshrc
-sudo sed -i 's/RefreshPeriod = ./RefreshPeriod = 0/g' /etc/pamac.conf
 sudo pacman -R --noconfirm matray
 sudo pacman-mirrors --geoip -m rank
 sudo pacman -Syyu --noconfirm
 sudo pacman -Fy --noconfirm
 sudo pacman -S --noconfirm archlinux-keyring
+balooctl suspend
+balooctl disable
+echo "alias mountsdb=\"mkdir $HOME/sdb; sudo mount /dev/sdb1 $HOME/sdb; sudo chmod -R 777 $HOME/sdb\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+echo "alias umountsdb=\"sudo umount -v /dev/sdb1\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+sudo sed -i 's/RefreshPeriod = ./RefreshPeriod = 0/g' /etc/pamac.conf
 
 timeout 9 firefox
 sudo sed -i 's|Exec=|Exec=export MOZ_DISABLE_RDD_SANDBOX=1 \&\& |g' /usr/share/applications/firefox.desktop
