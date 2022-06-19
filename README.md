@@ -180,6 +180,9 @@ docker system prune
 
 sudo sed -i 's/#EnableAUR/EnableAUR/g' /etc/pamac.conf
 sudo pamac install --no-confirm wps-office ttf-wps-fonts wps-office-mui-zh-cn wps-office-fonts ttf-ms-fonts
+sudo sed -i '2a \
+export XMODIFIERS="@im=fcitx"\
+export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
 sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
 
 source /etc/profile
