@@ -152,7 +152,7 @@ rules:\n\
   - IP-CIDR,192.173.64.0/18,tSG,no-resolve\n\
   - IP-CIDR,198.38.96.0/19,tSG,no-resolve\n\
   - IP-CIDR,198.45.48.0/20,tSG,no-resolve\n\
-  - MATCH,tSG\n\
+  - MATCH,tDE\n\
 proxies:\n\
   - {name: \"tDE\", type: trojan, port: 443, server: c.c, password: 0}\n\
   - {name: \"tSG\", type: trojan, port: 443, server: c.c, password: 0}\n\
