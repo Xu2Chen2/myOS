@@ -77,7 +77,6 @@ sudo pacman -S --noconfirm apm
 sudo pacman -S --noconfirm baidupcs-go
 sudo pacman -S --noconfirm wireguard-tools
 sudo pacman -S --noconfirm paraview
-sudo pacman -S --noconfirm telegram-desktop
 sudo pacman -S --noconfirm yt-dlp
 sudo pacman -S --noconfirm chromium && xdg-settings set default-web-browser chromium.desktop
 sudo pacman -S --noconfirm syncthing && sudo systemctl enable --now syncthing@$USER
