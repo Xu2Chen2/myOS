@@ -155,8 +155,6 @@ rules:\n\
 proxies:\n\
   - {name: \"tDE\", type: trojan, port: 443, server: c.c, password: 0}\n\
   - {name: \"tSG\", type: trojan, port: 443, server: c.c, password: 0}\n\
-  - {name: \"sDE\", type: ss, port: 443, server: a.a.a.a, password: 0, cipher: chacha20-ietf-poly1305}\n\
-  - {name: \"sSG\", type: ss, port: 443, server: a.a.a.a, password: 0, cipher: chacha20-ietf-poly1305}\n\
 " | tee $HOME/.config/clash/config.yaml
 
 sudo pacman -S --noconfirm virt-manager qemu vde2 dnsmasq bridge-utils openbsd-netcat edk2-ovmf swtpm
