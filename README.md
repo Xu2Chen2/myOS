@@ -168,10 +168,6 @@ sudo systemctl daemon-reload
 sudo systemctl enable docker
 sudo usermod -aG docker $USER
 sudo systemctl start docker
-curl -s https://api.github.com/repos/docker/compose/releases/latest | grep browser_download_url  | grep docker-compose-linux-x86_64 | cut -d '"' -f 4 | wget -qi -
-chmod +x docker-compose-linux-x86_64
-sudo mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
-docker system prune
 
 source /etc/profile
 source /etc/environment
@@ -201,19 +197,6 @@ sudo sed -i '2a \
 export XMODIFIERS="@im=fcitx"\
 export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
 sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
-# Anaconda
-wget -O - https://www.anaconda.com/distribution/ 2>/dev/null | sed -ne 's@.*\(https:\/\/repo\.anaconda\.com\/archive\/Anaconda3-.*-Linux-x86_64\.sh\)\">64-Bit (x86) Installer.*@\1@p' | xargs wget
-bash ./Anaconda3-*-Linux-x86_64.sh -b -p $HOME/anaconda3
-rm -rf ./Anaconda3-*-Linux-x86_64.sh
-echo -e "\
-[Desktop Entry]\n\
-Type=Application\n\
-Name=Spyder\n\
-Exec=$HOME/anaconda3/bin/spyder\n\
-Terminal=false\n\
-StartupNotify=true\n\
-Categories=Science\n\
-" | sudo tee /usr/share/applications/spyder.desktop
 # ForARM
 exportproxy && for iAPK in {\
 "org.mozilla.fenix",\
