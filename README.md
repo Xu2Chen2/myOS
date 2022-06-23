@@ -75,6 +75,7 @@ sudo pacman -S --noconfirm rnote
 sudo pacman -S --noconfirm wireguard-tools
 sudo pacman -S --noconfirm paraview
 sudo pacman -S --noconfirm yt-dlp
+sudo pacman -S --noconfirm spyder && pip install pystun3 numpy pandas matplotlib scienceplots
 sudo pacman -S --noconfirm chromium && xdg-settings set default-web-browser chromium.desktop
 sudo pacman -S --noconfirm syncthing && sudo systemctl enable --now syncthing@$USER
 sudo pacman -S --noconfirm clash && clash -t
@@ -178,9 +179,6 @@ source $HOME/.bash_profile
 source $HOME/.bashrc
 source $HOME/.zshrc
 yes | sudo pacman -Scc
-
-
-pip install pystun3 SciencePlots
 
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/OpenFOAM-v2112.tgz
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/ThirdParty-v2112.tgz
