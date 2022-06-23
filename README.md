@@ -172,13 +172,6 @@ chmod +x docker-compose-linux-x86_64
 sudo mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 docker system prune
 
-sudo sed -i 's/#EnableAUR/EnableAUR/g' /etc/pamac.conf
-sudo pamac install --no-confirm wps-office ttf-wps-fonts wps-office-mui-zh-cn wps-office-fonts ttf-ms-fonts
-sudo sed -i '2a \
-export XMODIFIERS="@im=fcitx"\
-export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
-sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
-
 source /etc/profile
 source /etc/environment
 source $HOME/.bash_profile
@@ -186,18 +179,7 @@ source $HOME/.bashrc
 source $HOME/.zshrc
 yes | sudo pacman -Scc
 
-wget -O - https://www.anaconda.com/distribution/ 2>/dev/null | sed -ne 's@.*\(https:\/\/repo\.anaconda\.com\/archive\/Anaconda3-.*-Linux-x86_64\.sh\)\">64-Bit (x86) Installer.*@\1@p' | xargs wget
-bash ./Anaconda3-*-Linux-x86_64.sh -b -p $HOME/anaconda3
-rm -rf ./Anaconda3-*-Linux-x86_64.sh
-echo -e "\
-[Desktop Entry]\n\
-Type=Application\n\
-Name=Spyder\n\
-Exec=$HOME/anaconda3/bin/spyder\n\
-Terminal=false\n\
-StartupNotify=true\n\
-Categories=Science\n\
-" | sudo tee /usr/share/applications/spyder.desktop
+
 pip install pystun3 SciencePlots
 
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/OpenFOAM-v2112.tgz
@@ -214,6 +196,27 @@ echo "alias of2112=\"source ~/openfoam/OpenFOAM-v2112/etc/bashrc\"" | tee -a $HO
 # curl -s https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "uBlock*" | cut -d : -f 2,3 | tr -d \" | wget -qi - ; rm -rf $HOME/Downloads/*,
 
 << EOF
+# WPS
+sudo sed -i 's/#EnableAUR/EnableAUR/g' /etc/pamac.conf
+sudo pamac install --no-confirm wps-office ttf-wps-fonts wps-office-mui-zh-cn wps-office-fonts ttf-ms-fonts
+sudo sed -i '2a \
+export XMODIFIERS="@im=fcitx"\
+export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
+sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
+# Anaconda
+wget -O - https://www.anaconda.com/distribution/ 2>/dev/null | sed -ne 's@.*\(https:\/\/repo\.anaconda\.com\/archive\/Anaconda3-.*-Linux-x86_64\.sh\)\">64-Bit (x86) Installer.*@\1@p' | xargs wget
+bash ./Anaconda3-*-Linux-x86_64.sh -b -p $HOME/anaconda3
+rm -rf ./Anaconda3-*-Linux-x86_64.sh
+echo -e "\
+[Desktop Entry]\n\
+Type=Application\n\
+Name=Spyder\n\
+Exec=$HOME/anaconda3/bin/spyder\n\
+Terminal=false\n\
+StartupNotify=true\n\
+Categories=Science\n\
+" | sudo tee /usr/share/applications/spyder.desktop
+# ForARM
 exportproxy && for iAPK in {\
 "org.mozilla.fenix",\
 "org.mozilla.firefox_beta",\
@@ -230,7 +233,7 @@ exportproxy && for iAPK in {\
 "com.tranzmate"\
 "it.kyntos.webus"\
 }; do docker run --rm -v $HOME/Downloads:/output ghcr.io/efforg/apkeep:stable -a $iAPK /output && adb install "$iAPK.apk"; done
-
+# ForVPS
 sudo su
 apt update -y
 apt install iptables-persistent wget curl -y
