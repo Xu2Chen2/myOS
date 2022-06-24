@@ -190,13 +190,6 @@ echo "alias of2112=\"source ~/openfoam/OpenFOAM-v2112/etc/bashrc\"" | tee -a $HO
 # curl -s https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "uBlock*" | cut -d : -f 2,3 | tr -d \" | wget -qi - ; rm -rf $HOME/Downloads/*,
 
 << EOF
-# WPS
-sudo sed -i 's/#EnableAUR/EnableAUR/g' /etc/pamac.conf
-sudo pamac install --no-confirm wps-office wps-office-all-dicts-win-languages wps-office-fonts
-sudo sed -i '2a \
-export XMODIFIERS="@im=fcitx"\
-export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
-sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
 # ForARM
 exportproxy && for iAPK in {\
 "org.mozilla.fenix",\
@@ -207,7 +200,6 @@ exportproxy && for iAPK in {\
 "com.lonelycatgames.Xplore",\
 "com.google.android.apps.translate",\
 "com.google.android.inputmethod.latin",\
-"org.kde.kdeconnect_tp",\
 "com.tencent.mm",\
 "com.whatsapp",\
 "com.microsoft.teams",\
