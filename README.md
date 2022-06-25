@@ -176,6 +176,13 @@ source $HOME/.bashrc
 source $HOME/.zshrc
 yes | sudo pacman -Scc
 
+sudo sed -i 's/#EnableAUR/EnableAUR/g' /etc/pamac.conf
+sudo pamac install --no-confirm wps-office ttf-wps-fonts wps-office-mui-zh-cn wps-office-fonts ttf-ms-fonts wps-office-all-dicts-win-languages
+sudo sed -i '2a \
+export XMODIFIERS="@im=fcitx"\
+export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
+sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
+
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/OpenFOAM-v2112.tgz
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/ThirdParty-v2112.tgz
 mkdir $HOME/openfoam
