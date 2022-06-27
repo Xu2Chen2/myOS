@@ -199,7 +199,6 @@ echo "alias of2112=\"source ~/openfoam/OpenFOAM-v2112/etc/bashrc\"" | tee -a $HO
 << EOF
 # ForARM
 exportproxy && for iAPK in {\
-"org.mozilla.fenix",\
 "org.mozilla.firefox_beta",\
 "com.apkpure.installer",\
 "org.videolan.vlc",\
@@ -208,6 +207,7 @@ exportproxy && for iAPK in {\
 "com.google.android.apps.translate",\
 "com.google.android.inputmethod.latin",\
 "com.tencent.mm",\
+"com.bilibili.app.in",\
 "com.whatsapp",\
 "com.microsoft.teams",\
 "com.tranzmate"\
