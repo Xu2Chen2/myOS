@@ -179,7 +179,6 @@ sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
 # curl -s https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "uBlock*" | cut -d : -f 2,3 | tr -d \" | wget -qi - ; rm -rf $HOME/Downloads/*,
 
 << EOF
-# ForOF
 #!/bin/bash
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/OpenFOAM-v2112.tgz
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/ThirdParty-v2112.tgz
