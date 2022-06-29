@@ -28,10 +28,6 @@ user_pref(\"network.dns.echconfig.enabled\", true);\n\
 user_pref(\"network.dns.use_https_rr_as_altsvc\", true);\n\
 user_pref(\"dom.security.https_only_mode\", true);\n\
 user_pref(\"network.proxy.type\", 5);\n\
-user_pref(\"network.proxy.http\", \"127.0.0.1\");\n\
-user_pref(\"network.proxy.http_port\", 7890);\n\
-user_pref(\"network.proxy.ssl\", \"127.0.0.1\");\n\
-user_pref(\"network.proxy.ssl_port\", 7890);\n\
 user_pref(\"network.proxy.socks\", \"127.0.0.1\");\n\
 user_pref(\"network.proxy.socks_port\", 7890);\n\
 user_pref(\"network.proxy.socks_remote_dns\", true);\n\
