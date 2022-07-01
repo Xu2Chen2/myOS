@@ -74,7 +74,10 @@ sudo pacman -S --noconfirm yt-dlp
 sudo pacman -S --noconfirm spyder && pip install pystun3 numpy pandas matplotlib scienceplots
 sudo pacman -S --noconfirm chromium && xdg-settings set default-web-browser chromium.desktop
 sudo pacman -S --noconfirm syncthing && sudo systemctl enable --now syncthing@$USER
-sudo pacman -S --noconfirm clash && clash -t
+
+sudo pacman -S --noconfirm clash
+clash -t
+git clone -b gh-pages --depth 1 https://github.com/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
 echo "alias exportproxy=\"export http_proxy=http://127.0.0.1:7890/ ; export https_proxy=https://127.0.0.1:7890/ ; export ftp_proxy=http://127.0.0.1:7890/\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 echo -e "\
 mixed-port: 7890\n\
@@ -84,6 +87,7 @@ mode: rule\n\
 log-level: info\n\
 ipv6: true\n\
 external-controller: 127.0.0.1:9090\n\
+external-ui: clash-dashboard\n\
 secret: '0000'\n\
 rules:\n\
   - DOMAIN-SUFFIX,cn,DIRECT\n\
