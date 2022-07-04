@@ -81,7 +81,7 @@ git clone -b gh-pages --depth 1 https://github.com/Dreamacro/clash-dashboard $HO
 echo "alias exportproxy=\"export http_proxy=http://127.0.0.1:7890/ ; export https_proxy=https://127.0.0.1:7890/ ; export ftp_proxy=http://127.0.0.1:7890/\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 echo -e "\
 mixed-port: 7890\n\
-allow-lan: false\n\
+allow-lan: true\n\
 bind-address: '*'\n\
 mode: rule\n\
 log-level: info\n\
