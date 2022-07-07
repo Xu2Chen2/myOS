@@ -192,18 +192,6 @@ echo "alias of2112=\"source ~/openfoam/OpenFOAM-v2112/etc/bashrc\"" | tee -a $HO
 # ForARM
 exportproxy && for iAPK in {\
 "org.mozilla.firefox_beta",\
-"com.apkpure.installer",\
-"org.videolan.vlc",\
-"com.jacksoftw.webcam",\
-"com.lonelycatgames.Xplore",\
-"com.google.android.apps.translate",\
-"com.google.android.inputmethod.latin",\
-"org.kde.kdeconnect_tp",\
-"com.tencent.mm",\
-"com.whatsapp",\
-"com.microsoft.teams",\
-"com.tranzmate"\
-"it.kyntos.webus"\
 }; do docker run --rm -v $HOME/Downloads:/output ghcr.io/efforg/apkeep:stable -a $iAPK /output && adb install "$iAPK.apk"; done
 # ForVPS
 sudo su
