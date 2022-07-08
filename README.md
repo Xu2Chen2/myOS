@@ -171,4 +171,5 @@ iptables-save
 netfilter-persistent save
 netfilter-persistent reload
 iptables -L -n --line-numbers
+dhclient -6 ens3
 EOF
