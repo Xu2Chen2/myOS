@@ -159,10 +159,8 @@ echo "alias of2112=\"source ~/openfoam/OpenFOAM-v2112/etc/bashrc\"" | tee -a $HO
 
 # sudo su
 # apt update -y
-# apt install iptables-persistent wget curl -y
 # iptables -I INPUT -s 0.0.0.0/0 -p tcp --match multiport --dports 22,80,443 -j ACCEPT
 # iptables-save
+# apt install iptables-persistent -y
 # netfilter-persistent save
-# netfilter-persistent reload
-# iptables -L -n --line-numbers
 # dhclient -6 ens3
