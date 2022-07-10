@@ -114,8 +114,8 @@ rules:\n\
 proxies:\n\
   - {name: \"tDE\", type: trojan, port: 443, server: c.c, password: 0}\n\
   - {name: \"tSG\", type: trojan, port: 443, server: c.c, password: 0}\n\
-  - {name: \"vDE\", type: vmess, port: 443, server: c.c, uuid: 00, alterId: 32, cipher: auto}\n\
-  - {name: \"vSG\", type: vmess, port: 443, server: c.c, uuid: 00, alterId: 32, cipher: auto}\n\
+  - {name: \"vDE\", type: vmess, alterId: 0, cipher: auto, port: 443, server: c.c, uuid: 0}\n\
+  - {name: \"vSG\", type: vmess, alterId: 0, cipher: auto, port: 443, server: c.c, uuid: 0}\n\
 " | tee $HOME/.config/clash/config.yaml
 
 sudo pacman -S --noconfirm virt-manager qemu vde2 dnsmasq bridge-utils openbsd-netcat edk2-ovmf swtpm
