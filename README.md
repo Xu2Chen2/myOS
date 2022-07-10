@@ -157,19 +157,12 @@ echo "alias of2112=\"source ~/openfoam/OpenFOAM-v2112/etc/bashrc\"" | tee -a $HO
 # echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com"] \n}' | sudo tee /etc/docker/daemon.json
 # curl -s https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "uBlock*" | cut -d : -f 2,3 | tr -d \" | wget -qi - ; rm -rf $HOME/Downloads/*,
 
-<< EOF
-# ForARM
-exportproxy && for iAPK in {\
-"org.mozilla.firefox_beta",\
-}; do docker run --rm -v $HOME/Downloads:/output ghcr.io/efforg/apkeep:stable -a $iAPK /output && adb install "$iAPK.apk"; done
-# ForVPS
-sudo su
-apt update -y
-apt install iptables-persistent wget curl -y
-iptables -I INPUT -s 0.0.0.0/0 -p tcp --match multiport --dports 22,80,443 -j ACCEPT
-iptables-save
-netfilter-persistent save
-netfilter-persistent reload
-iptables -L -n --line-numbers
-dhclient -6 ens3
-EOF
+# sudo su
+# apt update -y
+# apt install iptables-persistent wget curl -y
+# iptables -I INPUT -s 0.0.0.0/0 -p tcp --match multiport --dports 22,80,443 -j ACCEPT
+# iptables-save
+# netfilter-persistent save
+# netfilter-persistent reload
+# iptables -L -n --line-numbers
+# dhclient -6 ens3
