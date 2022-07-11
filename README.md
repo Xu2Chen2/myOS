@@ -137,7 +137,7 @@ sudo systemctl enable libvirtd
 sudo usermod -aG kvm $USER
 sudo usermod -aG libvirt $USER
 sudo systemctl start libvirtd
-# wget -P $HOME/Downloads https://az792536.vo.msecnd.net/vms/VMBuild_20190311/VirtualBox/MSEdge/MSEdge.Win10.VirtualBox.zip && unzip -d $HOME/Downloads $HOME/Downloads/MSEdge.Win10.VirtualBox.zip && tar -xvf $HOME/Downloads/'MSEdge - Win10.ova' -C $HOME/Downloads/ && qemu-img convert -O qcow2 $HOME/Downloads/'MSEdge - Win10-disk001.vmdk' $HOME/win10stable1809.qcow2 && rm -rf $HOME/Downloads/*
+# wget -P $HOME/Downloads https://az792536.vo.msecnd.net/vms/VMBuild_20190311/VirtualBox/MSEdge/MSEdge.Win10.VirtualBox.zip && unzip -d $HOME/Downloads $HOME/Downloads/MSEdge.Win10.VirtualBox.zip && tar -xvf $HOME/Downloads/'MSEdge - Win10.ova' -C $HOME/Downloads/ && qemu-img convert -O qcow2 $HOME/Downloads/'MSEdge - Win10-disk001.vmdk' $HOME/win10stable1809.qcow2 && rm -rf $HOME/Downloads/*.*
 
 yes | sudo pacman -Scc
 
