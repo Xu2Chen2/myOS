@@ -143,13 +143,6 @@ source $HOME/.bashrc
 source $HOME/.zshrc
 yes | sudo pacman -Scc
 
-sudo sed -i 's/#EnableAUR/EnableAUR/g' /etc/pamac.conf
-sudo pamac install --no-confirm wps-office ttf-wps-fonts wps-office-mui-zh-cn wps-office-fonts ttf-ms-fonts wps-office-all-dicts-win-languages
-sudo sed -i '2a \
-export XMODIFIERS="@im=fcitx"\
-export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
-sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
-
 wget -P $HOME/Downloads https://gmsh.info/bin/Linux/gmsh-stable-Linux64.tgz
 tar -zxvf $HOME/Downloads/gmsh-stable-Linux64.tgz -C $HOME/Downloads
 cp -f $HOME/Downloads/gmsh-4.10.5-Linux64/bin/gmsh $HOME/
@@ -166,6 +159,13 @@ source $HOME/openfoam/OpenFOAM-v2112/etc/bashrc
 $HOME/openfoam/OpenFOAM-v2112/Allwmake -j -s -q -l
 rm -rf $HOME/Downloads/OpenFOAM-v2112.tgz $HOME/Downloads/ThirdParty-v2112.tgz
 echo "alias of2112=\"source ~/openfoam/OpenFOAM-v2112/etc/bashrc\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+
+sudo sed -i 's/#EnableAUR/EnableAUR/g' /etc/pamac.conf
+sudo pamac install --no-confirm wps-office ttf-wps-fonts wps-office-mui-zh-cn wps-office-fonts ttf-ms-fonts wps-office-all-dicts-win-languages
+sudo sed -i '2a \
+export XMODIFIERS="@im=fcitx"\
+export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
+sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
 
 # echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com"] \n}' | sudo tee /etc/docker/daemon.json
 # curl -s https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "uBlock*" | cut -d : -f 2,3 | tr -d \" | wget -qi - ; rm -rf $HOME/Downloads/*,
