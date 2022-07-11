@@ -121,6 +121,14 @@ proxies:\n\
   - {name: \"vDE\", type: vmess, alterId: 0, cipher: auto, port: 443, server: c.c, uuid: 0}\n\
   - {name: \"vSG\", type: vmess, alterId: 0, cipher: auto, port: 443, server: c.c, uuid: 0}\n\
 " | tee $HOME/.config/clash/config.yaml
+# curl -s https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "uBlock*" | cut -d : -f 2,3 | tr -d \" | wget -qi - ; rm -rf $HOME/Downloads/*,
+
+sudo pacman -S --noconfirm docker
+sudo systemctl daemon-reload
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+sudo systemctl start docker
+# echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com"] \n}' | sudo tee /etc/docker/daemon.json
 
 sudo pacman -S --noconfirm virt-manager qemu vde2 dnsmasq bridge-utils openbsd-netcat edk2-ovmf swtpm
 yes | sudo pacman -S iptables-nft
@@ -129,12 +137,6 @@ sudo systemctl enable libvirtd
 sudo usermod -aG kvm $USER
 sudo usermod -aG libvirt $USER
 sudo systemctl start libvirtd
-
-sudo pacman -S --noconfirm docker
-sudo systemctl daemon-reload
-sudo systemctl enable docker
-sudo usermod -aG docker $USER
-sudo systemctl start docker
 
 source /etc/profile
 source /etc/environment
@@ -166,6 +168,3 @@ sudo sed -i '2a \
 export XMODIFIERS="@im=fcitx"\
 export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
 sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
-
-# echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com"] \n}' | sudo tee /etc/docker/daemon.json
-# curl -s https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "uBlock*" | cut -d : -f 2,3 | tr -d \" | wget -qi - ; rm -rf $HOME/Downloads/*,
