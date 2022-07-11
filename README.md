@@ -15,6 +15,8 @@ balooctl suspend
 balooctl disable
 echo "alias mountsdb=\"mkdir $HOME/sdb; sudo mount /dev/sdb1 $HOME/sdb; sudo chmod -R 777 $HOME/sdb\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 echo "alias umountsdb=\"sudo umount -v /dev/sdb1\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+source $HOME/.bashrc
+source $HOME/.zshrc
 sudo sed -i 's/RefreshPeriod = ./RefreshPeriod = 0/g' /etc/pamac.conf
 
 timeout 9 firefox
@@ -150,6 +152,8 @@ wget -P $HOME/Downloads https://gmsh.info/bin/Linux/gmsh-stable-Linux64.tgz
 tar -zxvf $HOME/Downloads/gmsh-stable-Linux64.tgz -C $HOME/Downloads
 cp -f $HOME/Downloads/gmsh-4.10.5-Linux64/bin/gmsh $HOME/
 echo "alias gmsh=\"$HOME/gmsh\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+source $HOME/.bashrc
+source $HOME/.zshrc
 
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/OpenFOAM-v2112.tgz
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/ThirdParty-v2112.tgz
