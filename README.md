@@ -137,12 +137,8 @@ sudo systemctl enable libvirtd
 sudo usermod -aG kvm $USER
 sudo usermod -aG libvirt $USER
 sudo systemctl start libvirtd
+# wget -P $HOME/Downloads https://az792536.vo.msecnd.net/vms/VMBuild_20190311/VirtualBox/MSEdge/MSEdge.Win10.VirtualBox.zip && unzip -d $HOME/Downloads $HOME/Downloads/MSEdge.Win10.VirtualBox.zip
 
-source /etc/profile
-source /etc/environment
-source $HOME/.bash_profile
-source $HOME/.bashrc
-source $HOME/.zshrc
 yes | sudo pacman -Scc
 
 wget -P $HOME/Downloads https://gmsh.info/bin/Linux/gmsh-stable-Linux64.tgz
