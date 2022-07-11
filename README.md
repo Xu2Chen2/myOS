@@ -81,6 +81,8 @@ sudo pacman -S --noconfirm clash
 clash -t
 git clone -b gh-pages --depth 1 https://github.com/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
 echo "alias exportproxy=\"export http_proxy=http://127.0.0.1:7890/ ; export https_proxy=https://127.0.0.1:7890/ ; export ftp_proxy=http://127.0.0.1:7890/\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+source $HOME/.bashrc
+source $HOME/.zshrc
 echo -e "\
 mixed-port: 7890\n\
 allow-lan: true\n\
