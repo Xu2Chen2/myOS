@@ -157,6 +157,8 @@ source $HOME/openfoam/OpenFOAM-v2112/etc/bashrc
 $HOME/openfoam/OpenFOAM-v2112/Allwmake -j -s -q -l
 rm -rf $HOME/Downloads/OpenFOAM-v2112.tgz $HOME/Downloads/ThirdParty-v2112.tgz
 echo "alias of2112=\"source ~/openfoam/OpenFOAM-v2112/etc/bashrc\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+source $HOME/.bashrc
+source $HOME/.zshrc
 
 sudo sed -i 's/#EnableAUR/EnableAUR/g' /etc/pamac.conf
 sudo pamac install --no-confirm wps-office ttf-wps-fonts wps-office-mui-zh-cn wps-office-fonts ttf-ms-fonts wps-office-all-dicts-win-languages
