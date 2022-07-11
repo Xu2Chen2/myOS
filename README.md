@@ -146,6 +146,11 @@ export XMODIFIERS="@im=fcitx"\
 export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
 sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
 
+wget -P $HOME/Downloads https://gmsh.info/bin/Linux/gmsh-stable-Linux64.tgz
+tar -zxvf $HOME/Downloads/gmsh-stable-Linux64.tgz -C $HOME/Downloads
+cp -f $HOME/Downloads/gmsh-4.10.5-Linux64/bin/gmsh $HOME/
+echo "alias gmsh=\"$HOME/gmsh\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/OpenFOAM-v2112.tgz
 wget -P $HOME/Downloads https://dl.openfoam.com/source/v2112/ThirdParty-v2112.tgz
 mkdir $HOME/openfoam
