@@ -121,7 +121,6 @@ proxies:\n\
   - {name: \"vDE\", type: vmess, alterId: 0, cipher: auto, port: 443, server: c.c, uuid: 0}\n\
   - {name: \"vSG\", type: vmess, alterId: 0, cipher: auto, port: 443, server: c.c, uuid: 0}\n\
 " | tee $HOME/.config/clash/config.yaml
-# curl -s https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "uBlock*" | cut -d : -f 2,3 | tr -d \" | wget -qi - ; rm -rf $HOME/Downloads/*,
 
 sudo pacman -S --noconfirm docker
 sudo systemctl daemon-reload
