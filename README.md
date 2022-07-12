@@ -101,17 +101,15 @@ dns:\n\
    - 1.0.0.1\n\
    - 208.67.222.222\n\
   nameserver:\n\
-   - https://cloudflare-dns.com/dns-query\n\
    - https://i.passcloud.xyz/dns-query\n\
    - https://a.passcloud.xyz/dns-query\n\
   enhanced-mode: fake-ip\n\
   fake-ip-range: 198.18.0.1/16\n\
-  fallback:
-   - https://i.passcloud.xyz/dns-query
-   - https://a.passcloud.xyz/dns-query
-  fallback-filter:
-   geoip: true
-   geoip-code: CN
+  fallback:\n\
+   - https://cloudflare-dns.com/dns-query\n\
+  fallback-filter:\n\
+   geoip: true\n\
+   geoip-code: CN\n\
 rules:\n\
   - DOMAIN-SUFFIX,cn,DIRECT\n\
   - GEOIP,CN,DIRECT,no-resolve\n\
