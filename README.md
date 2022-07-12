@@ -95,7 +95,7 @@ external-ui: clash-dashboard\n\
 secret: '0000'\n\
 dns:\n\
   enable: true\n\
-  listen: 0.0.0.0:5353\n\
+  listen: 0.0.0.0:1053\n\
   ipv6: true\n\
   default-nameserver:\n\
    - 1.0.0.1\n\
