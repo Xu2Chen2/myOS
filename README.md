@@ -93,6 +93,19 @@ ipv6: true\n\
 external-controller: 127.0.0.1:9090\n\
 external-ui: clash-dashboard\n\
 secret: '0000'\n\
+dns:\n\
+  enable: true\n\
+  listen: 0.0.0.0:53\n\
+  ipv6: true\n\
+  default-nameserver:\n\
+   - 1.0.0.1\n\
+   - 208.67.222.222\n\
+  enhanced-mode: fake-ip\n\
+  fake-ip-range: 198.18.0.1/16\n\
+  nameserver:\n\
+   - https://mozilla.cloudflare-dns.com/dns-query\n\
+   - https://i.passcloud.xyz/dns-query\n\
+   - https://a.passcloud.xyz/dns-query\n\
 rules:\n\
   - DOMAIN-SUFFIX,cn,DIRECT\n\
   - GEOIP,CN,DIRECT,no-resolve\n\
