@@ -85,7 +85,7 @@ source $HOME/.bashrc
 source $HOME/.zshrc
 echo -e "\
 mixed-port: 7890\n\
-allow-lan: true\n\
+allow-lan: false\n\
 bind-address: '*'\n\
 mode: rule\n\
 log-level: info\n\
