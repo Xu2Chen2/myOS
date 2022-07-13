@@ -6,11 +6,11 @@ sed -i '30,33d' $HOME/.config/powermanagementprofilesrc
 sed -i '18,25d' $HOME/.config/powermanagementprofilesrc
 sed -i '3,9d' $HOME/.config/powermanagementprofilesrc
 echo -e "[Daemon]\nAutolock=false\nLockOnResume=false" | tee $HOME/.config/kscreenlockerrc
-sudo pacman -R --noconfirm matray
+sudo pamac remove --no-confirm matray
 sudo pacman-mirrors --geoip -m rank
 sudo pacman -Syyu --noconfirm
 sudo pacman -Fy --noconfirm
-sudo pacman -S --noconfirm archlinux-keyring
+sudo pamac install --no-confirm archlinux-keyring
 balooctl suspend
 balooctl disable
 echo "alias mountsdb=\"mkdir $HOME/sdb; sudo mount /dev/sdb1 $HOME/sdb; sudo chmod -R 777 $HOME/sdb\"" | tee -a $HOME/.bashrc $HOME/.zshrc
