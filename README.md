@@ -150,7 +150,7 @@ sudo mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 # echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com"] \n}' | sudo tee /etc/docker/daemon.json
 
 sudo pamac install --no-confirm virt-manager qemu vde2 dnsmasq bridge-utils openbsd-netcat edk2-ovmf swtpm
-yes | sudo pacman -S iptables-nft
+yes | sudo pamac install --no-confirm iptables-nft
 sudo systemctl daemon-reload
 sudo systemctl enable libvirtd
 sudo usermod -aG kvm $USER
