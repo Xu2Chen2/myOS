@@ -73,7 +73,6 @@ sudo pamac install --no-confirm rnote
 sudo pamac install --no-confirm wireguard-tools
 sudo pamac install --no-confirm paraview
 sudo pamac install --no-confirm yt-dlp
-sudo pamac install --no-confirm spyder && pip install pystun3 numpy pandas matplotlib scienceplots
 sudo pamac install --no-confirm chromium && xdg-settings set default-web-browser chromium.desktop
 sudo pamac install --no-confirm syncthing && sudo systemctl enable --now syncthing@$USER
 
@@ -158,6 +157,20 @@ sudo usermod -aG libvirt $USER
 sudo systemctl start libvirtd
 # wget -P $HOME/Downloads https://az792536.vo.msecnd.net/vms/VMBuild_20190311/VirtualBox/MSEdge/MSEdge.Win10.VirtualBox.zip && unzip -d $HOME/Downloads $HOME/Downloads/MSEdge.Win10.VirtualBox.zip && tar -xvf $HOME/Downloads/'MSEdge - Win10.ova' -C $HOME/Downloads/ && qemu-img convert -O qcow2 $HOME/Downloads/'MSEdge - Win10-disk001.vmdk' $HOME/win10stable1809.qcow2 && rm -rf $HOME/Downloads/*.*
 
+wget -O - https://www.anaconda.com/distribution/ 2>/dev/null | sed -ne 's@.*\(https:\/\/repo\.anaconda\.com\/archive\/Anaconda3-.*-Linux-x86_64\.sh\)\">64-Bit (x86) Installer.*@\1@p' | xargs wget
+bash ./Anaconda3-*-Linux-x86_64.sh -b -p $HOME/anaconda3
+rm -rf ./Anaconda3-*-Linux-x86_64.sh
+echo -e "\
+[Desktop Entry]\n\
+Type=Application\n\
+Name=Spyder\n\
+Exec=$HOME/anaconda3/bin/spyder\n\
+Terminal=false\n\
+StartupNotify=true\n\
+Categories=Science\n\
+" | sudo tee /usr/share/applications/spyder.desktop
+pip install pystun3 numpy pandas matplotlib scienceplots
+
 wget -P $HOME/Downloads https://gmsh.info/bin/Linux/gmsh-stable-Linux64.tgz
 tar -zxvf $HOME/Downloads/gmsh-stable-Linux64.tgz -C $HOME/Downloads
 cp -f $HOME/Downloads/gmsh-4.10.5-Linux64/bin/gmsh $HOME/
@@ -184,5 +197,5 @@ export XMODIFIERS="@im=fcitx"\
 export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
 sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
 
-sudo pamac clean -k 0 -v --no-confirm
+sudo pamac clean -k 0 -b -v --no-confirm
 sudo pamac clean -b -v --no-confirm
