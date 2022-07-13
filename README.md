@@ -184,4 +184,5 @@ export XMODIFIERS="@im=fcitx"\
 export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
 sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
 
+sudo pamac clean -k 0 -v --no-confirm
 sudo pamac clean -b -v --no-confirm
