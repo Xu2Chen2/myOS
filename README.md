@@ -190,12 +190,5 @@ echo "alias of2112=\"source ~/openfoam/OpenFOAM-v2112/etc/bashrc\"" | tee -a $HO
 source $HOME/.bashrc
 source $HOME/.zshrc
 
-sudo sed -i 's/#EnableAUR/EnableAUR/g' /etc/pamac.conf
-sudo pamac install --no-confirm wps-office ttf-wps-fonts wps-office-mui-zh-cn wps-office-fonts ttf-ms-fonts wps-office-all-dicts-win-languages
-sudo sed -i '2a \
-export XMODIFIERS="@im=fcitx"\
-export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
-sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
-
 sudo pamac clean -k 0 -b -v --no-confirm
 sudo pamac clean -b -v --no-confirm
