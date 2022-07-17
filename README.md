@@ -112,24 +112,6 @@ dns:\n\
 rules:\n\
   - DOMAIN-SUFFIX,cn,DIRECT\n\
   - GEOIP,CN,DIRECT,no-resolve\n\
-  - DOMAIN-SUFFIX,netflix.com,tSG\n\
-  - DOMAIN-SUFFIX,netflix.net,tSG\n\
-  - DOMAIN-SUFFIX,nflxext.com,tSG\n\
-  - DOMAIN-SUFFIX,nflximg.com,tSG\n\
-  - DOMAIN-SUFFIX,nflximg.net,tSG\n\
-  - DOMAIN-SUFFIX,nflxso.net,tSG\n\
-  - DOMAIN-SUFFIX,nflxvideo.net,tSG\n\
-  - DOMAIN-SUFFIX,netflixdnstest0.com,tSG\n\
-  - DOMAIN-SUFFIX,netflixdnstest1.com,tSG\n\
-  - DOMAIN-SUFFIX,netflixdnstest2.com,tSG\n\
-  - DOMAIN-SUFFIX,netflixdnstest3.com,tSG\n\
-  - DOMAIN-SUFFIX,netflixdnstest4.com,tSG\n\
-  - DOMAIN-SUFFIX,netflixdnstest5.com,tSG\n\
-  - DOMAIN-SUFFIX,netflixdnstest6.com,tSG\n\
-  - DOMAIN-SUFFIX,netflixdnstest7.com,tSG\n\
-  - DOMAIN-SUFFIX,netflixdnstest8.com,tSG\n\
-  - DOMAIN-SUFFIX,netflixdnstest9.com,tSG\n\
-  - GEOIP,NETFLIX,tSG,no-resolve\n\
   - MATCH,tDE\n\
 proxies:\n\
   - {name: \"tDE\", type: trojan, port: 443, server: c.c, password: 0}\n\
