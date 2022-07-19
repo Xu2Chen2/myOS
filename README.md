@@ -112,7 +112,7 @@ dns:\n\
 rules:\n\
   - DOMAIN-SUFFIX,cn,DIRECT\n\
   - GEOIP,CN,DIRECT,no-resolve\n\
-  - MATCH,tDE\n\
+  - MATCH,tSG\n\
 proxies:\n\
   - {name: \"tDE\", type: trojan, port: 443, server: c.c, password: 0}\n\
   - {name: \"tSG\", type: trojan, port: 443, server: c.c, password: 0}\n\
@@ -122,8 +122,8 @@ proxy-groups:\n\
   - name: \"relay\"\n\
     type: relay\n\
     proxies:\n\
-      - tDE\n\
-      - tSG\n\
+      - vDE\n\
+      - vSG\n\
 " | tee $HOME/.config/clash/config.yaml
 
 sudo pamac install --no-confirm docker
