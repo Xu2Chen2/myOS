@@ -118,6 +118,12 @@ proxies:\n\
   - {name: \"tSG\", type: trojan, port: 443, server: c.c, password: 0}\n\
   - {name: \"vDE\", type: vmess, alterId: 0, cipher: auto, port: 443, server: c.c, uuid: 0}\n\
   - {name: \"vSG\", type: vmess, alterId: 0, cipher: auto, port: 443, server: c.c, uuid: 0}\n\
+proxy-groups:\n\
+  - name: \"relay\"\n\
+    type: relay\n\
+    proxies:\n\
+      - tDE\n\
+      - tSG\n\
 " | tee $HOME/.config/clash/config.yaml
 
 sudo pamac install --no-confirm docker
