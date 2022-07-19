@@ -71,6 +71,7 @@ sudo pamac install --no-confirm obs-studio
 sudo pamac install --no-confirm flameshot
 sudo pamac install --no-confirm rnote
 sudo pamac install --no-confirm wireguard-tools
+sudo pamac install --no-confirm firefox-developer-edition
 sudo pamac install --no-confirm paraview
 sudo pamac install --no-confirm yt-dlp
 sudo pamac install --no-confirm chromium && xdg-settings set default-web-browser chromium.desktop
