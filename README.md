@@ -7,6 +7,7 @@ sed -i '18,25d' $HOME/.config/powermanagementprofilesrc
 sed -i '3,9d' $HOME/.config/powermanagementprofilesrc
 echo -e "[Daemon]\nAutolock=false\nLockOnResume=false" | tee $HOME/.config/kscreenlockerrc
 sudo pacman-mirrors --geoip -m rank
+geoLocation=$(pacman-mirrors --status | grep -c China)
 sudo pamac remove --no-confirm matray
 sudo pamac checkupdates -a
 sudo pamac upgrade -a --force-refresh --no-confirm
@@ -125,8 +126,11 @@ proxy-groups:\n\
       - vDE\n\
       - vSG\n\
 " | tee $HOME/.config/clash/config.yaml
-git clone -b gh-pages --depth 1 https://github.com/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
-# git clone -b gh-pages --depth 1 https://hub.fastgit.xyz/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
+if [ "$geoLocation" -gt 0 ]; then
+    git clone -b gh-pages --depth 1 https://hub.fastgit.xyz/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
+else
+    git clone -b gh-pages --depth 1 https://github.com/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
+fi
 
 sudo pamac install --no-confirm docker
 sudo systemctl daemon-reload
@@ -134,7 +138,9 @@ sudo systemctl enable docker
 sudo usermod -aG docker $USER
 sudo systemctl start docker
 sudo pamac install --no-confirm docker-compose
-# echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com","http://hub-mirror.c.163.com","https://docker.mirrors.ustc.edu.cn"] \n}' | sudo tee /etc/docker/daemon.json && sudo systemctl restart docker
+if [ "$geoLocation" -gt 0 ]; then
+    echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com","http://hub-mirror.c.163.com","https://docker.mirrors.ustc.edu.cn"] \n}' | sudo tee /etc/docker/daemon.json && sudo systemctl restart docker
+fi
 
 sudo pamac install --no-confirm virt-manager qemu vde2 dnsmasq bridge-utils openbsd-netcat edk2-ovmf swtpm
 yes | sudo pamac install --no-confirm iptables-nft
@@ -143,7 +149,6 @@ sudo systemctl enable libvirtd
 sudo usermod -aG kvm $USER
 sudo usermod -aG libvirt $USER
 sudo systemctl start libvirtd
-# wget -P $HOME/Downloads https://az792536.vo.msecnd.net/vms/VMBuild_20190311/VirtualBox/MSEdge/MSEdge.Win10.VirtualBox.zip && unzip -d $HOME/Downloads $HOME/Downloads/MSEdge.Win10.VirtualBox.zip && tar -xvf $HOME/Downloads/'MSEdge - Win10.ova' -C $HOME/Downloads/ && qemu-img convert -O qcow2 $HOME/Downloads/'MSEdge - Win10-disk001.vmdk' $HOME/win10stable1809.qcow2 && rm -rf $HOME/Downloads/*.*
 
 wget -O - https://www.anaconda.com/distribution/ 2>/dev/null | sed -ne 's@.*\(https:\/\/repo\.anaconda\.com\/archive\/Anaconda3-.*-Linux-x86_64\.sh\)\">64-Bit (x86) Installer.*@\1@p' | xargs wget
 bash ./Anaconda3-*-Linux-x86_64.sh -b -p $HOME/anaconda3
@@ -191,3 +196,4 @@ sudo sed -i 's/EnableFlatpak/#EnableFlatpak/g' /etc/pamac.conf
 
 sudo pamac clean -k 0 -b -v --no-confirm
 sudo pamac clean -b -v --no-confirm
+# wget -P $HOME/Downloads https://az792536.vo.msecnd.net/vms/VMBuild_20190311/VirtualBox/MSEdge/MSEdge.Win10.VirtualBox.zip && unzip -d $HOME/Downloads $HOME/Downloads/MSEdge.Win10.VirtualBox.zip && tar -xvf $HOME/Downloads/'MSEdge - Win10.ova' -C $HOME/Downloads/ && qemu-img convert -O qcow2 $HOME/Downloads/'MSEdge - Win10-disk001.vmdk' $HOME/win10stable1809.qcow2 && rm -rf $HOME/Downloads/*.*
