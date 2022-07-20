@@ -79,7 +79,6 @@ sudo pamac install --no-confirm syncthing && sudo systemctl enable --now syncthi
 
 sudo pamac install --no-confirm clash
 clash -t
-git clone -b gh-pages --depth 1 https://github.com/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
 echo "alias exportproxy=\"export http_proxy=http://127.0.0.1:7890/ ; export https_proxy=https://127.0.0.1:7890/ ; export ftp_proxy=http://127.0.0.1:7890/\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 source $HOME/.bashrc
 source $HOME/.zshrc
@@ -126,6 +125,8 @@ proxy-groups:\n\
       - vDE\n\
       - vSG\n\
 " | tee $HOME/.config/clash/config.yaml
+git clone -b gh-pages --depth 1 https://github.com/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
+# git clone -b gh-pages --depth 1 https://hub.fastgit.xyz/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
 
 sudo pamac install --no-confirm docker
 sudo systemctl daemon-reload
