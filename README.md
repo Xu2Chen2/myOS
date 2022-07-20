@@ -134,7 +134,7 @@ sudo systemctl enable docker
 sudo usermod -aG docker $USER
 sudo systemctl start docker
 sudo pamac install --no-confirm docker-compose
-# echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com","http://hub-mirror.c.163.com","https://docker.mirrors.ustc.edu.cn"] \n}' | sudo tee /etc/docker/daemon.json
+# echo -e '{\n "registry-mirrors": ["https://registry.docker-cn.com","http://hub-mirror.c.163.com","https://docker.mirrors.ustc.edu.cn"] \n}' | sudo tee /etc/docker/daemon.json && sudo systemctl restart docker
 
 sudo pamac install --no-confirm virt-manager qemu vde2 dnsmasq bridge-utils openbsd-netcat edk2-ovmf swtpm
 yes | sudo pamac install --no-confirm iptables-nft
