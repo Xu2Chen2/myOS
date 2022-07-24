@@ -189,9 +189,13 @@ sudo pamac install --no-confirm wps-office ttf-wps-fonts wps-office-mui-zh-cn wp
 sudo sed -i '2a \
 export XMODIFIERS="@im=fcitx"\
 export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
+sudo pamac install --no-confirm debtap
+sudo debtap -u
 sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
+
 sudo sed -i 's/#EnableSnap/EnableSnap/g' /etc/pamac.conf
 sudo sed -i 's/EnableSnap/#EnableSnap/g' /etc/pamac.conf
+
 sudo sed -i 's/#EnableFlatpak/EnableFlatpak/g' /etc/pamac.conf
 sudo sed -i 's/EnableFlatpak/#EnableFlatpak/g' /etc/pamac.conf
 
