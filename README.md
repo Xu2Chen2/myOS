@@ -49,6 +49,7 @@ sudo pamac install --no-confirm fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fc
 sudo pamac install --no-confirm gvfs-smb samba kdenetwork-filesharing manjaro-settings-samba
 sudo pamac install --no-confirm base-devel ninja openmpi tbb cmake make python python-numpy
 sudo pamac install --no-confirm wine winetricks wine-mono wine_gecko
+sudo pamac install --no-confirm libxcrypt-compat
 sudo pamac install --no-confirm intel-gpu-tools
 sudo pamac install --no-confirm android-tools
 sudo pamac install --no-confirm net-tools
