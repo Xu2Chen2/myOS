@@ -54,6 +54,7 @@ sudo pamac install --no-confirm intel-gpu-tools
 sudo pamac install --no-confirm android-tools
 sudo pamac install --no-confirm net-tools
 sudo pamac install --no-confirm glfw-x11
+sudo pamac install --no-confirm gconf
 sudo pamac install --no-confirm nmap
 sudo pamac install --no-confirm barrier
 sudo pamac install --no-confirm git
