@@ -166,7 +166,7 @@ Terminal=false\n\
 StartupNotify=true\n\
 Categories=Science\n\
 " | sudo tee /usr/share/applications/spyder.desktop
-pip install pystun3 numpy pandas matplotlib scienceplots
+pip install pystun3 numpy pandas matplotlib scienceplots gmsh
 
 wget -P $HOME/Downloads https://gmsh.info/bin/Linux/gmsh-stable-Linux64.tgz
 tar -zxvf $HOME/Downloads/gmsh-stable-Linux64.tgz -C $HOME/Downloads
