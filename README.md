@@ -194,8 +194,6 @@ export XMODIFIERS="@im=fcitx"\
 export QT_IM_MODULE="fcitx"' /usr/bin/wps /usr/bin/et /usr/bin/wpp /usr/bin/wpspdf
 sudo pamac install --no-confirm debtap
 sudo debtap -u
-sudo sed -i 's/EnableAUR/#EnableAUR/g' /etc/pamac.conf
 
-sudo pamac clean -k 0 -b -v --no-confirm
-sudo pamac clean -b -v --no-confirm
+sudo pamac clean -k 0 -b -v --no-confirm; sudo pamac clean -b -v --no-confirm; yes | sudo pacman -Scc
 # wget -P $HOME/Downloads https://az792536.vo.msecnd.net/vms/VMBuild_20190311/VirtualBox/MSEdge/MSEdge.Win10.VirtualBox.zip && unzip -d $HOME/Downloads $HOME/Downloads/MSEdge.Win10.VirtualBox.zip && tar -xvf $HOME/Downloads/'MSEdge - Win10.ova' -C $HOME/Downloads/ && qemu-img convert -O qcow2 $HOME/Downloads/'MSEdge - Win10-disk001.vmdk' $HOME/win10stable1809.qcow2 && rm -rf $HOME/Downloads/*.*
