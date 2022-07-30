@@ -119,6 +119,8 @@ rules:\n\
   - GEOIP,CN,DIRECT,no-resolve\n\
   - MATCH,tSG\n\
 proxies:\n\
+  - {name: \"sDE\", type: ss, cipher: chacha20-ietf-poly1305, port: 00000, server: 0.0.0.0, password: 0}\n\
+  - {name: \"sSG\", type: ss, cipher: chacha20-ietf-poly1305, port: 00000, server: 0.0.0.0, password: 0}\n\
   - {name: \"tDE\", type: trojan, port: 443, server: c.c, password: 0}\n\
   - {name: \"tSG\", type: trojan, port: 443, server: c.c, password: 0}\n\
   - {name: \"vDE\", type: vmess, alterId: 0, cipher: auto, port: 443, server: c.c, uuid: 0}\n\
@@ -127,8 +129,8 @@ proxy-groups:\n\
   - name: \"relay\"\n\
     type: relay\n\
     proxies:\n\
-      - vDE\n\
       - vSG\n\
+      - sDE\n\
 " | tee $HOME/.config/clash/config.yaml
 if [ "$geoLocation" -gt 0 ]; then
     git clone -b gh-pages --depth 1 https://hub.fastgit.xyz/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
