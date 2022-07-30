@@ -123,7 +123,7 @@ proxies:\n\
   - {name: \"sSG\", type: ss, cipher: chacha20-ietf-poly1305, port: 00000, server: 0.0.0.0, password: 0}\n\
   - {name: \"tDE\", type: trojan, port: 443, server: c.c, password: 0}\n\
   - {name: \"tSG\", type: trojan, port: 443, server: c.c, password: 0}\n\
-  - {name: \"vJC\", type: vmess, alterId: 0, cipher: auto, port: 443, server: 0.0.0.0, uuid: 0}\n\
+  - {name: \"vJC\", type: vmess, alterId: 0, cipher: none, port: 443, server: 0.0.0.0, uuid: 0}\n\
 proxy-groups:\n\
   - name: \"relay\"\n\
     type: relay\n\
