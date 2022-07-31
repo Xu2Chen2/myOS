@@ -119,9 +119,9 @@ rules:\n\
   - GEOIP,CN,DIRECT,no-resolve\n\
   - MATCH,tSG\n\
 proxies:\n\
-  - {name: \"sDE\", type: ss, cipher: chacha20-ietf-poly1305, port: 10000, server: 0.0.0.0, password: 0}\n\
-  - {name: \"sSG\", type: ss, cipher: chacha20-ietf-poly1305, port: 10000, server: 0.0.0.0, password: 0}\n\
-  - {name: \"vJC\", type: vmess, alterId: 0, cipher: none, port: 443, server: 0.0.0.0, uuid: 0}\n\
+  - {name: \"sDE\", type: ss, cipher: chacha20-ietf-poly1305, port: 00000, server: 0.0.0.0, password: 0}\n\
+  - {name: \"sSG\", type: ss, cipher: chacha20-ietf-poly1305, port: 00000, server: 0.0.0.0, password: 0}\n\
+  - {name: \"vJC\", type: vmess, alterId: 0, cipher: auto, port: 00000, server: 0.0.0.0, uuid: 00-00-00}\n\
 proxy-groups:\n\
   - name: \"relay\"\n\
     type: relay\n\
