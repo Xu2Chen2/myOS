@@ -79,6 +79,7 @@ sudo pamac install --no-confirm filezilla
 sudo pamac install --no-confirm paraview
 sudo pamac install --no-confirm yt-dlp you-get
 sudo pamac install --no-confirm pandoc
+sudo pamac install --no-confirm calibre
 sudo pamac install --no-confirm chromium && xdg-settings set default-web-browser chromium.desktop
 sudo pamac install --no-confirm syncthing && sudo systemctl enable --now syncthing@$USER
 
