@@ -99,7 +99,7 @@ external-ui: clash-dashboard\n\
 secret: '0000'\n\
 dns:\n\
   enable: true\n\
-  listen: 0.0.0.0:1053\n\
+  listen: 0.0.0.0:53\n\
   ipv6: true\n\
   default-nameserver:\n\
    - 1.0.0.1\n\
@@ -119,10 +119,8 @@ rules:\n\
   - GEOIP,CN,DIRECT,no-resolve\n\
   - MATCH,tSG\n\
 proxies:\n\
-  - {name: \"sDE\", type: ss, cipher: chacha20-ietf-poly1305, port: 00000, server: 0.0.0.0, password: 0}\n\
-  - {name: \"sSG\", type: ss, cipher: chacha20-ietf-poly1305, port: 00000, server: 0.0.0.0, password: 0}\n\
-  - {name: \"tDE\", type: trojan, port: 443, server: c.c, password: 0}\n\
-  - {name: \"tSG\", type: trojan, port: 443, server: c.c, password: 0}\n\
+  - {name: \"sDE\", type: ss, cipher: chacha20-ietf-poly1305, port: 10000, server: 0.0.0.0, password: 0}\n\
+  - {name: \"sSG\", type: ss, cipher: chacha20-ietf-poly1305, port: 10000, server: 0.0.0.0, password: 0}\n\
   - {name: \"vJC\", type: vmess, alterId: 0, cipher: none, port: 443, server: 0.0.0.0, uuid: 0}\n\
 proxy-groups:\n\
   - name: \"relay\"\n\
