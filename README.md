@@ -85,7 +85,6 @@ sudo pamac install --no-confirm syncthing && sudo systemctl enable --now syncthi
 
 sudo pamac install --no-confirm clash
 clash -t
-echo "alias exportproxy=\"export http_proxy=http://127.0.0.1:7890/ ; export https_proxy=https://127.0.0.1:7890/ ; export ftp_proxy=http://127.0.0.1:7890/\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 source $HOME/.bashrc
 source $HOME/.zshrc
 echo -e "\
@@ -130,6 +129,8 @@ proxy-groups:\n\
       - vJC\n\
       - sSG\n\
 " | tee $HOME/.config/clash/config.yaml
+echo "alias clash=\"sudo cp -rf $HOME/.config/clash/* /root/.config/clash; sudo clash\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+echo "alias exportproxy=\"export {http,https,HTTP,HTTPS,ftp,rsync,all}_proxy=http://127.0.0.1:7890/\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 if [ "$geoLocation" -gt 0 ]; then
     git clone -b gh-pages --depth 1 https://hub.fastgit.xyz/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
 else
